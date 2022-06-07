@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view ('index', [
+        "title" => "Home"
+    ]);
 });
+Route::get('/about', function () {
+    return view ('About', [
+        "title" => "About",
+        "nama" => "Reyhan Nayaka Utomo",
+        "email" => "reyhan@smktelkom-pwt.sch.id",
+        "gambar" => "spider-man-miles-morales-logo-4k-iphone-x-wallpaper-ilikewallpaper_com"
+    ]);
+});
+Route::get('/gallery', function () {
+    return view ('gallery', [
+        "title" => "Gallery"
+    ]);
+});
+Route::resource('/contacts', ContactController::class);
+
+Auth::routes();
+
+Route :: group(['middleware'=>['auth']],function(){
+    Route :: get('/home',[App\Http\Controllers Home Controller :: class,'index'])->name('home');
+
+}); 
