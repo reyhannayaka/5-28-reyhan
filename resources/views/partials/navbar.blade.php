@@ -10,13 +10,13 @@
                     <a class="nav-link {{ ( $title === 'Home') ? 'active' : ' '}}" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ( $title === 'About') ? 'active' : ' '}}" href="/Aabout">About</a>
+                    <a class="nav-link {{ ( $title === 'About') ? 'active' : ' '}}" href="/about">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ ( $title === 'home') ? 'active' : ' '}}" href="/gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ( $title === 'Contacts') ? 'active' : ' '}}" href="/contacts">Gallery</a>
+                    <a class="nav-link {{ ( $title === 'Contacts') ? 'active' : ' '}}" href="{{ route('contacts.create')}}">Contact Us</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
